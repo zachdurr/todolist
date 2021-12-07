@@ -1,11 +1,16 @@
 import React from "react";
-import ToDos from "./ToDos";
 
 class ToDoList extends React.Component {
+    constructor(props){
+        super(props)
+        console.log(this.props)
+    }
     render() {
         return(
         <div>
-            <li><ToDos /></li>
+            {this.props.todos.map((todo) => {
+                return <li>{todo}</li>
+            })}
         </div>)
     }
 }
